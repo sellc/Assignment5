@@ -11,16 +11,6 @@
 //The ./(File Name) upc_corpus.txt (upc number)
 //-Sample- ./HashTable upc_corpus.txt 797776111084
 
-//725177540363
-//12569675162
-//12569595590
-//70720011808
-//13484000091
-//86891069555
-//72392315017
-//731454390422
-//70145170616
-
 int main(int argc, char** arga) {
 	ifstream inputFile;
 	string input = "";
@@ -41,7 +31,7 @@ int main(int argc, char** arga) {
 	searchValues[8] = "70145170616";
 
 	//Open file and read in each line
-	inputFile.open(arga[1]);
+	inputFile.open("upc_corpus.txt");
 	getline(inputFile, input, '\n');
 	while (!inputFile.eof()) {
 		switch (switchValue) {
@@ -66,10 +56,11 @@ int main(int argc, char** arga) {
 	inputFile.close();
 
 	int index = 0;
-	while (index < 10) {
+	while (index < 9) {
+		cout << endl;
 		//Search for a node and print the total time
 		clock_t t = clock();
-		cout << h.search(searchValues[index]) << endl;
+		cout << h.search(searchValues[index]);
 		t = clock() - t;
 
 		cout << "time: " << t << " milliseconds" << endl;

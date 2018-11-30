@@ -34,31 +34,21 @@ public:
 		delete[] nodeArray;
 	}
 	void insert(string key, string value) {
-		Node* current;
-		if (nodeArray[stoi(key) % size].key.compare("") == 0) {
-			nodeArray[stoi(key) % size].key = key;
-			nodeArray[stoi(key) % size].value = value;
-		} else {
-			current = &nodeArray[stoi(key) % size];
-			while (current->next != nullptr) {
-				current = current->next;
-			}
-			current->next = new Node(key, value);
-		}
+		Node * newNode = new Node(key, value);
+		int hashValue = getHashValue(key);
+		newNode->next = nodeArray[hashValue].next;
+		nodeArray[hashValue].next = newNode;
 	}
 
 	string search(string key) {
-		int index = 0;
 		Node * current = nullptr;
-		while (index < size) {
-			current = &nodeArray[index];
-			while (current != nullptr) {
-				if (current->key == key) {
-					return current->value;
-				}
-				current = current->next;
+		int hashValue = getHashValue(key);
+		current = &nodeArray[hashValue];
+		while (current != nullptr) {
+			if (current->key == key) {
+				return current->value;
 			}
-			index++;
+			current = current->next;
 		}
 		return "";
 	}
@@ -76,6 +66,16 @@ public:
 			}
 			index++;
 		}
+	}
+
+	int getHashValue(string key){
+		string substring;
+		if (key.length() > 4) {
+			substring = key.substr(key.length() - 4, 4);
+		} else {
+			substring = key;
+		}
+		return stoi(substring) % size;
 	}
 };
 
