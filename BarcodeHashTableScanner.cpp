@@ -19,19 +19,9 @@ int main(int argc, char** arga) {
 	string value = "";
 	istringstream inputStream;
 	int switchValue = 0;
-	string searchValues[9];
-	searchValues[0] = "725177540363";
-	searchValues[1] = "12569675162";
-	searchValues[2] = "12569595590";
-	searchValues[3] = "70720011808";
-	searchValues[4] = "13484000091";
-	searchValues[5] = "86891069555";
-	searchValues[6] = "72392315017";
-	searchValues[7] = "731454390422";
-	searchValues[8] = "70145170616";
 
 	//Open file and read in each line
-	inputFile.open("upc_corpus.txt");
+	inputFile.open(arga[1]);
 	getline(inputFile, input, '\n');
 	while (!inputFile.eof()) {
 		switch (switchValue) {
@@ -55,19 +45,14 @@ int main(int argc, char** arga) {
 	}
 	inputFile.close();
 
-	int index = 0;
-	while (index < 9) {
-		cout << endl;
 		//Search for a node and print the total time
 		clock_t t = clock();
-		cout << h.search(searchValues[index]);
+		cout << h.search(arga[2]) << endl;
 		t = clock() - t;
 
 		cout << "time: " << t << " milliseconds" << endl;
 		cout << CLOCKS_PER_SEC << " clocks per second" << endl;
 		cout << "time: " << t * 1.0 / CLOCKS_PER_SEC << " seconds" << endl;
 
-		index++;
-	}
 	return 0;
 }
