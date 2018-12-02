@@ -4,7 +4,12 @@
 #include <iostream>
 using namespace std;
 
+//Chris Sellers
+//11/28/2018
+//Assignment 5 - UPC Scanner
+
 class HashTable {
+	//Node object used for storing the key, value and next node in the list
 	struct Node {
 		string key;
 		string value;
@@ -25,14 +30,19 @@ class HashTable {
 	Node* nodeArray;
 
 public:
+	//Constructor
 	HashTable() {
 		size = 1000;
 		nodeArray = new Node[size];
 	}
+
+	//Destructor
 	~HashTable() {
 		deleteAll();
 		delete[] nodeArray;
 	}
+
+//Insert a new node with the provided key and value
 	void insert(string key, string value) {
 		Node * newNode = new Node(key, value);
 		int hashValue = getHashValue(key);
@@ -40,6 +50,7 @@ public:
 		nodeArray[hashValue].next = newNode;
 	}
 
+//Search for a value with the given key
 	string search(string key) {
 		Node * current = nullptr;
 		int hashValue = getHashValue(key);
@@ -53,6 +64,8 @@ public:
 		return "";
 	}
 
+//Delete all nodes when the program is done.
+//Increments through the array and deletes the list of nodes
 	void deleteAll() {
 		int index = 0;
 		Node * current = nullptr;
@@ -68,6 +81,7 @@ public:
 		}
 	}
 
+//Get the hash value of the given key by performing the hashing operation
 	int getHashValue(string key){
 		string substring;
 		if (key.length() > 4) {
