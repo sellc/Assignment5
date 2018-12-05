@@ -13,7 +13,6 @@ using namespace std;
 //a key, value, left and right reference to nodes
 class BST {
 public:
-
 	//Constructor
 	BST() {
 		root = nullptr;
@@ -51,14 +50,12 @@ private:
 			right = nullptr;
 		}
 	};
-
 	Node* root;
 
 	//Insert a new node
 	void insert(Node* newNode, Node*& root) {
 		if (root == nullptr) {
 			root = newNode;
-
 		} else if (root->key.compare(newNode->key) > 0) {
 			insert(newNode, root->left);
 		} else {
