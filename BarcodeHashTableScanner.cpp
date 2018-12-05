@@ -11,6 +11,7 @@
 //The ./(File Name) upc_corpus.txt (upc number)
 //-Sample- ./HashTable upc_corpus.txt 797776111084
 
+//Barcode Scanner with a Hash Table data structure
 int main(int argc, char** arga) {
 	HashTableScanner scanner(arga[1]);
 

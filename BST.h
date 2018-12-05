@@ -33,10 +33,7 @@ public:
 	string find(string key) {
 		return find(key, root);
 	}
-	//Delete all nodes. Base function
-	void deleteAllNodes() {
-		deleteAllNodes(root);
-	}
+
 private:
 	struct Node {
 		string key;
@@ -73,6 +70,11 @@ private:
 			return find(key, root->right);
 		}
 		return NULL;
+	}
+
+	//Delete all nodes. Base function
+	void deleteAllNodes() {
+		deleteAllNodes(root);
 	}
 
 	//Delete all nodes in the order of left, right, root
