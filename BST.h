@@ -6,8 +6,8 @@
 using namespace std;
 
 //Chris Sellers
-//11/21/2018
-//Assignment 4 - UPC Scanner
+//11/28/2018
+//Assignment 5 - UPC Scanner
 
 //This is a binary search tree. Each node contains
 //a key, value, left and right reference to nodes

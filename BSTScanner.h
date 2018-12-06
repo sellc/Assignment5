@@ -1,7 +1,13 @@
 #ifndef BSTSCANNER_H
 #define BSTSCANNER_H
 
+#include <fstream>
+#include <sstream>
 #include "BST.h"
+
+//Chris Sellers
+//11/28/2018
+//Assignment 5 - UPC Scanner
 
 //This class is used to read in from a file and
 //store values in a BST.

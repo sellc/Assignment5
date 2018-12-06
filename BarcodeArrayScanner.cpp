@@ -6,8 +6,8 @@
 using namespace std;
 
 //Chris Sellers
-//11/21/2018
-//Assignment 4 - UPC Scanner
+//11/28/2018
+//Assignment 5 - UPC Scanner
 
 //*****Running the program in terminal*****
 //The ./(File Name) upc_corpus.txt (upc number)
@@ -45,7 +45,7 @@ int main(int argc, char** arga) {
 			key = input;
 			break;
 
-		//Second token ending with '\n'
+			//Second token ending with '\n'
 		case 1:
 			getline(inputFile, input, '\n');
 			value = input;

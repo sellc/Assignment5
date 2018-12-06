@@ -34,31 +34,31 @@ class HashTable {
 
 	//Delete all nodes when the program is done.
 	//Increments through the array and deletes the list of nodes
-		void deleteAll() {
-			int index = 0;
-			Node * current = nullptr;
-			Node * temp = nullptr;
-			while (index < size) {
-				current = nodeArray[index].next;
-				while (current != nullptr) {
-					temp = current;
-					current = current->next;
-					delete temp;
-				}
-				index++;
+	void deleteAll() {
+		int index = 0;
+		Node * current = nullptr;
+		Node * temp = nullptr;
+		while (index < size) {
+			current = nodeArray[index].next;
+			while (current != nullptr) {
+				temp = current;
+				current = current->next;
+				delete temp;
 			}
+			index++;
 		}
+	}
 
 	//Get the hash value of the given key by performing the hashing operation
-		int getHashValue(string key){
-			string substring;
-			if (key.length() > 4) {
-				substring = key.substr(key.length() - 4, 4);
-			} else {
-				substring = key;
-			}
-			return stoi(substring) % size;
+	int getHashValue(string key) {
+		string substring;
+		if (key.length() > 4) {
+			substring = key.substr(key.length() - 4, 4);
+		} else {
+			substring = key;
 		}
+		return stoi(substring) % size;
+	}
 
 public:
 	//Constructor

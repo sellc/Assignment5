@@ -1,11 +1,9 @@
 #include <time.h>
-#include <fstream>
-#include <sstream>
 #include "BSTScanner.h"
 
 //Chris Sellers
-//11/21/2018
-//Assignment 4 - UPC Scanner
+//11/28/2018
+//Assignment 5 - UPC Scanner
 
 //*****Running the program in terminal*****
 //The ./(File Name) upc_corpus.txt (upc number)
